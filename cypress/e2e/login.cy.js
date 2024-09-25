@@ -77,4 +77,22 @@ describe('login', function () {
             })
         })
     })
+
+    context.only('quando não preencho nenhum dos campos', function () {
+        const alertMessages = [
+            'E-mail é obrigatório',
+            'Senha é obrigatória'
+        ]
+
+        beforeEach(function () {
+            loginPage.go()
+            loginPage.submit()
+        })
+
+        alertMessages.forEach(function (alert) {
+            it('deve exibir ' + alert.toLowerCase(), function () {
+                loginPage.alertHaveText(alert)
+            })
+        })
+    })
 })
