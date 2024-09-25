@@ -1,6 +1,11 @@
 import { el } from './elements'
+import toast from '../../components/toast'
 
 class LoginPage {
+
+    constructor() {
+        this.toast = toast
+    }
 
     go() {
         cy.visit('/')
@@ -14,6 +19,11 @@ class LoginPage {
     submit() {
         cy.contains(el.signIn)
             .click()
+    }
+
+    alertHaveText(expectedText){
+        cy.contains(el.alertError, expectedText)
+            .should('be.visible')
     }
 }
 
