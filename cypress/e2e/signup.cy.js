@@ -26,7 +26,7 @@ describe('cadastro', function () {
         })
     })
 
-    context.only('quando o email já existe', function () {
+    context('quando o email já existe', function () {
 
         const user = {
             name: 'Depay',
