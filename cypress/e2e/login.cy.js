@@ -1,6 +1,5 @@
 import loginPage from '../support/pages/login'
 import dashPage from '../support/pages/dash'
-import login from '../support/pages/login'
 
 describe('login', function () {
 

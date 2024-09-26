@@ -1,0 +1,23 @@
+{
+  "success": {
+    "name": "Memphis Depay",
+    "email": "memphis@samuraibs.com",
+    "password": "123456"
+  },
+  "email_dup": {
+    "name": "Yuri Alberto",
+    "email": "yuri@samuraibs.com",
+    "password": "123456",
+    "is_provider": true
+  },
+  "email_inv": {
+    "name": "Rodrigo Garro",
+    "email": "garro.yahoo.com",
+    "password": "123456"
+  },
+  "short_password": {
+    "name": "Thales Magno",
+    "email": "magno@gmail.com",
+    "password": null
+  }
+}
