@@ -7,8 +7,8 @@ describe('login', function () {
     context('quando o usuário é muito bom', function () {
 
         const user = {
-            name: 'Robson Jassa',
-            email: 'jassa@samuraibs.com',
+            name: 'Hugo Souza',
+            email: 'neneca@samuraibs.com',
             password: 'pwd123',
             is_provider: true
         }
@@ -30,8 +30,8 @@ describe('login', function () {
     context('quando o usuário é bom mas a senha esta incorreta', function () {
 
         let user = {
-            name: 'Celso Kamura',
-            email: 'kamura@samuraibs.com',
+            name: 'Igor Coronado',
+            email: 'coronado@samuraibs.com',
             password: 'pwd123',
             is_provider: true
         }
@@ -56,11 +56,11 @@ describe('login', function () {
     context('quando o formato do e-mail é inválido', function () {
 
         const emails = [
-            'memphis.com.br',
+            'romero.com.br',
             'outlook.com',
             '@gmail.com',
             '@',
-            'memphis@',
+            'angel@',
             '777',
             '&*^^;!#$%',
             'xpto123'

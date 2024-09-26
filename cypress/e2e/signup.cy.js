@@ -1,18 +1,19 @@
-import signup from '../support/pages/signup'
+
 import signupPage from '../support/pages/signup'
 
 describe('cadastro', function () {
 
+    before (function(){
+        cy.fixture('memphis')
+            .then(function(memphis){
+                this.memphis = memphis
+            })
+    })
+
     context('quando o usuário é novato', function () {
 
-        const user = {
-            name: 'Memphis',
-            email: 'memphis@samuraibs.com',
-            password: '123456'
-        }
-
         before(function () {
-            cy.task('removeUser', user.email)
+            cy.task('removeUser', this.memphis.email)
                 .then(function (result) {
                     console.log(result)
                 })
@@ -20,7 +21,7 @@ describe('cadastro', function () {
 
         it('deve cadastrar com sucesso', function () {
             signupPage.go()
-            signupPage.form(user)
+            signupPage.form(this.memphis)
             signupPage.submit()
             signupPage.toast.shouldHaveText('Agora você se tornou um(a) Samurai, faça seu login para ver seus agendamentos!')
         })
@@ -29,8 +30,8 @@ describe('cadastro', function () {
     context('quando o email já existe', function () {
 
         const user = {
-            name: 'Depay',
-            email: 'depay@samuraibs.com',
+            name: 'Yuri Alberto',
+            email: 'yuri@samuraibs.com',
             password: '123456',
             is_provider: true
         }
@@ -51,8 +52,8 @@ describe('cadastro', function () {
     context('quando o email é incorreto', function () {
 
         const user = {
-            name: 'Elizabeth Olsen',
-            email: 'liza.yahoo.com',
+            name: 'Rodrigo Garro',
+            email: 'garro.yahoo.com',
             password: '123456'
         }
 
@@ -74,7 +75,7 @@ describe('cadastro', function () {
 
         password.forEach(function (p) {
             it('não deve cadastrar com a senha: ' + p, function () {
-                const user = { name: 'Jason Friday', email: 'jason@gmail.com', password: p }
+                const user = { name: 'Thales Magno', email: 'magno@gmail.com', password: p }
 
                 signupPage.form(user)
                 signupPage.submit()
