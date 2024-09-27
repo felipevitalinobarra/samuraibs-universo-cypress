@@ -3,9 +3,9 @@ import signupPage from '../support/pages/signup'
 
 describe('cadastro', function () {
 
-    before (function(){
+    before(function () {
         cy.fixture('signup')
-            .then(function(signup){
+            .then(function (signup) {
                 this.success = signup.success
                 this.email_dup = signup.email_dup
                 this.email_inv = signup.email_inv

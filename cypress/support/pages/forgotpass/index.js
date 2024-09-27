@@ -3,7 +3,7 @@ import toast from '../../components/toast'
 
 class ForgotPassPage {
 
-    constructor(){
+    constructor() {
         this.toast = toast
     }
 
@@ -17,9 +17,8 @@ class ForgotPassPage {
             .type(email)
     }
 
-    submit(){
-        cy.contains('button[type=submit]', 'Recuperar')
-            .click()
+    submit() {
+        cy.contains('button[type=submit]', 'Recuperar').click()
     }
 
 }

@@ -23,7 +23,7 @@ class LoginPage {
             .click()
     }
 
-    alertHaveText(expectedText){
+    alertHaveText(expectedText) {
         cy.contains(el.alertError, expectedText)
             .should('be.visible')
     }
