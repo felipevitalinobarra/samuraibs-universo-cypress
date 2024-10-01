@@ -18,7 +18,8 @@ describe('dashboard', function () {
         it('o mesmo deve ser exibido no dashboard', function () {
             const day = getNextBusinessDay()
 
-            cy.uiLogin(provider)
+            // cy.uiLogin(provider)
+            cy.apiLogin(provider, true)
 
             dashPage.calendarShouldBeVisible()
             dashPage.selectDay(day)
