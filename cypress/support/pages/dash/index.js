@@ -27,7 +27,7 @@ class DashPage {
             // Verifica se o próximo dia é o dia 1 e estamos no fim do mês
             if (day === 1 && currentMonthIndex !== -1) {
                 // Avançar para o próximo mês
-                cy.get(el.monthNav).click()
+                cy.get(el.nextMonthButton).click()
             }
 
             // Selecionar o dia útil no calendário (pode estar no próximo mês)
