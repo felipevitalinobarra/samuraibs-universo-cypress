@@ -19,6 +19,7 @@ import './commands'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
-afterEach(function(){
-	cy.screenshot()
-})
+// Screenshot para todos os testes
+// afterEach(function(){
+// 	cy.screenshot()
+// })

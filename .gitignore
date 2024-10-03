@@ -1,4 +1,5 @@
 node_modules
 yarn.lock
 .env
-screenshots
+cypress/screenshots
+cypress/downloads
