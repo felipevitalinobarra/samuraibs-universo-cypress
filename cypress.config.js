@@ -45,6 +45,7 @@ module.exports = defineConfig({
     "baseUrl": "http://localhost:3000",
     "apiServer": "http://localhost:3333",
     "viewportWidth": 1440,
-    "viewportHeight": 900
+    "viewportHeight": 900,
+    "projectId": "bczftb"
   },
 });
