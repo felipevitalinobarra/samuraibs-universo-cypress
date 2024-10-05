@@ -5,10 +5,31 @@ on:
 
 jobs:
   chrome-ui-tests:
-    runs-on: ubuntu-latest
-
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [1]
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Ping API
+        uses: Leocardoso94/is-my-site-up@v1.2
+        with:
+          site: http://localhost:3333
 
-      - name: List files project
-        run: ls -l
+      - name: 'UI Tests - Chrome'
+        uses: cypress-io/github-action@v6
+        with:
+          install-command: yarn install
+          wait-on: 'http://localhost:3000'
+          wait-on-timeout: 120
+          browser: chrome
+          record: true
+          parallel: true
+          group: 'UI-Chrome'
+          spec: cypress/e2e
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
