@@ -19,7 +19,7 @@ jobs:
 
       - name: Start the server
         run: |
-          yarn start &  # Executa o servidor em segundo plano
+          yarn start &
       
       - name: Ping API
         uses: Leocardoso94/is-my-site-up@v1.2
@@ -41,7 +41,7 @@ jobs:
           record: true
           parallel: true
           group: 'UI-Chrome'
-          spec: cypress/e2e
+          spec: cypress/e2e/*
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
